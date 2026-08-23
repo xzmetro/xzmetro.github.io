@@ -1,18 +1,135 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xzmetro</title>
-    <style>
-    </style>
+    <title id="page-title">Xiaozhong's Metro</title>
+    <link rel="icon" type="image/png" href="../static/images/favicon.png">
+    <link rel="stylesheet" href="../static/css/main.css">
 </head>
 <body>
-    <h1>Xiaozhong's Metro</h1>
-    <p>A Minecraft mod.</p>
-    <div class="links">
-        <a href="https://github.com/xzmetro">GitHub</a>
-        <a href="https://github.com/xzmetro/xzmetro-mod">Mod 项目</a>
+<header>
+    <div class="header-title">
+        <img class="logo-img" src="../static/images/favicon.png" alt="Logo">
+        <span id="site-name">Xiaozhong's Metro</span>
     </div>
+    <nav class="header-nav">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="download.html" id="nav-download">Download</a>
+        <a href="https://github.com/xzmetro/xzmetro-mod/issues/" id="nav-issues">Issues</a>
+        <a href="https://github.com/xzmetro/xzmetro-mod">GitHub</a>
+        <a href="https://modrinth.com/mod/xz_s_metro/">Modrinth</a>
+        <a href="?lang=zh" id="lang-switch">简体中文</a>
+    </nav>
+</header>
+
+<main>
+    <div class="hero">
+        <h1 id="hero-title">Xiaozhong's Metro</h1>
+        <p class="subtitle" id="hero-subtitle">A Minecraft Subway Facility Expansion Mod</p>
+        <div class="badges">
+            <a href="https://modrinth.com/mod/xz_s_metro/">
+                <img src="https://img.shields.io/badge/Modrinth-1.20.1-00AF5C?logo=modrinth" alt="Modrinth">
+            </a>
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey" alt="License">
+            </a>
+        </div>
+        <p class="hero-desc" id="hero-desc">
+            A very ordinary and simple subway facility expansion mod. It is recommended to add the
+            <a href="https://modrinth.com/mod/minecraft-transit-railway">Minecraft Transit Railway</a>
+            mod for better utilization.
+        </p>
+        <div class="download-section">
+            <a href="download.html" class="download-btn-large" id="hero-download">Download</a>
+        </div>
+    </div>
+
+    <section id="features">
+        <h2 id="features-title">Features</h2>
+
+        <h3 id="blocks-title">Building Blocks</h3>
+        <ul class="feature-list" id="blocks-list">
+            <li><strong>All color wool blocks</strong> (Slabs, Stairs, Vertical Slabs)</li>
+            <li><strong>All color concrete blocks</strong> (Slabs, Stairs, Vertical Slabs)</li>
+            <li><em>Ported from Minecraft 26.3</em></li>
+        </ul>
+
+        <h3 id="metro-title">Metro Facilities</h3>
+        <ul class="feature-list" id="metro-list">
+            <li>Station Signs (Low / High)</li>
+            <li>Fire Extinguisher & Cabinet</li>
+            <li>APG Railing (Platform Screen Doors)</li>
+            <li>Train Departure Bell</li>
+            <li>Wuzhou Metro Logo</li>
+            <li>Tactile Paving</li>
+        </ul>
+
+        <h3 id="road-title">Road Facilities</h3>
+        <ul class="feature-list" id="road-list">
+            <li>Parking Barrier (Left / Middle / Right / Bracket)</li>
+            <li>Road Signs</li>
+            <li>Construction Barriers</li>
+            <li>Trackside Balise</li>
+        </ul>
+    </section>
+
+    <section id="requirements">
+        <h2 id="req-title">Requirements</h2>
+        <table>
+            <tr>
+                <th id="req-dep">Dependency</th>
+                <th id="req-ver">Version</th>
+            </tr>
+            <tr>
+                <td><strong>Minecraft</strong></td>
+                <td>1.20.1</td>
+            </tr>
+            <tr>
+                <td><strong>Fabric Loader</strong></td>
+                <td>>= 0.14.9</td>
+            </tr>
+            <tr>
+                <td><strong>Fabric API</strong></td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td><strong>Java</strong></td>
+                <td>>= 17</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="installation">
+        <h2 id="install-title">Installation</h2>
+        <ol class="steps">
+            <li id="install-step1">Install <a href="https://fabricmc.net/use/">Fabric Loader</a></li>
+            <li id="install-step2">Place the mod <code>.jar</code> file into your <code>mods/</code> folder</li>
+            <li id="install-step3">(Optional) Install <a href="https://modrinth.com/mod/minecraft-transit-railway">MTR Mod</a> for a better experience</li>
+        </ol>
+    </section>
+
+    <section id="license">
+        <h2 id="license-title">License</h2>
+        <p id="license-desc">This project is licensed under the <strong>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</strong>.</p>
+        <div class="license-box">
+            <p id="license-maynot"><strong>You may NOT:</strong></p>
+            <ul id="license-list">
+                <li>Use this mod for commercial purposes</li>
+                <li>Modify or distribute modified versions</li>
+                <li>Redistribute this mod without permission</li>
+            </ul>
+            <p>See the <a href="LICENSE">LICENSE</a> file for details.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p><strong id="footer-authors">Authors:</strong> Xiaozhong's Metro Organization All People</p>
+    <p class="coming-soon" id="footer-soon">This mod is under active development. More features coming soon!</p>
+</footer>
+
+<script src="../static/js/lang.js"></script>
+<script src="../static/js/index-lang.js"></script>
 </body>
 </html>
