@@ -1,6 +1,7 @@
 const i18n = {
     en: {
         title: "Xiaozhong's Metro - Home",
+        dlTitle: "Xiaozhong's Metro - Download",
         siteName: "Xiaozhong's Metro",
         navHome: "Home",
         navDownload: "Download",
@@ -14,6 +15,7 @@ const i18n = {
     },
     zh: {
         title: "小钟的Metro - 主页",
+        dlTitle: "小钟的Metro - 下载",
         siteName: "小钟的Metro",
         navHome: "主页",
         navDownload: "下载",
@@ -32,6 +34,9 @@ function setLang(lang) {
 
     const pageTitle = document.getElementById('page-title');
     if (pageTitle) pageTitle.textContent = data.title;
+
+    const dlPageTitle = document.getElementById('dl-page-title');
+    if (dlPageTitle) dlPageTitle.textContent = data.dlTitle;
 
     const siteName = document.getElementById('site-name');
     if (siteName) siteName.textContent = data.siteName;
