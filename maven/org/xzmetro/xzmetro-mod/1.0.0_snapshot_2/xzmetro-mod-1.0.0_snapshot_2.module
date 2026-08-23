@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.xzmetro",
+    "module": "xzmetro-mod",
+    "version": "1.0.0_snapshot_2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "xzmetro-mod-1.0.0_snapshot_2.jar",
+          "url": "xzmetro-mod-1.0.0_snapshot_2.jar",
+          "size": 543907,
+          "sha512": "372940a555c5c25e2182143e5a5a136bdc7d1549349d44ddeab193eb2317c059da3960de8b0e80d1acb8744ec6cf67ffcefd6e7fdb253e106e93b804c3b4f9f2",
+          "sha256": "e5ab5cb01e7e3d1beec6fd2e8b70a6507888e754c273d055d160018bfa731158",
+          "sha1": "077e49ba434df9634e6f6dace20d0bb3d2c94887",
+          "md5": "99e56efbd0a52194ae9269db9c66ef2a"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "fabric-loader",
+          "version": {
+            "requires": "0.19.3"
+          }
+        },
+        {
+          "group": "net.fabricmc.fabric-api",
+          "module": "fabric-api",
+          "version": {
+            "requires": "0.92.11+1.20.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "xzmetro-mod-1.0.0_snapshot_2.jar",
+          "url": "xzmetro-mod-1.0.0_snapshot_2.jar",
+          "size": 543907,
+          "sha512": "372940a555c5c25e2182143e5a5a136bdc7d1549349d44ddeab193eb2317c059da3960de8b0e80d1acb8744ec6cf67ffcefd6e7fdb253e106e93b804c3b4f9f2",
+          "sha256": "e5ab5cb01e7e3d1beec6fd2e8b70a6507888e754c273d055d160018bfa731158",
+          "sha1": "077e49ba434df9634e6f6dace20d0bb3d2c94887",
+          "md5": "99e56efbd0a52194ae9269db9c66ef2a"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "xzmetro-mod-1.0.0_snapshot_2-sources.jar",
+          "url": "xzmetro-mod-1.0.0_snapshot_2-sources.jar",
+          "size": 495696,
+          "sha512": "1078ca4a070dabc33a47ae1d69ab48ebfe8110f4f41fd4e4dfb2f9189438c4ac06c34916aac4da16f704d6dff30b766be1d6f3690dc0820d4b369edfff96d891",
+          "sha256": "d7528631dca5ef09b107af0c647dffa18883af204433df4d1addb88aa134e799",
+          "sha1": "fe7569c70c57d975a96c2fc29f868f487abdc023",
+          "md5": "c062f44c88553fa10d91e166104e0191"
+        }
+      ]
+    }
+  ]
+}
