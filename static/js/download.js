@@ -15,7 +15,7 @@ async function fetchHead(url) {
 }
 
 async function fetchHashes(version) {
-    const baseUrl = `${MAVEN_BASE_URL}/${version}/xzmetro-mod-${version}.jar`;
+    const baseUrl = `${MAVEN_BASE_URL}/${version}/simple_city-${version}.jar`;
     const hashes = {};
     const hashTypes = [
         { ext: 'md5', name: 'MD5' },
