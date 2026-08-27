@@ -1,4 +1,4 @@
-const MAVEN_BASE_URL = 'https://xzmetro.github.io/maven/org/xzmetro/xzmetro-mod';
+const MAVEN_BASE_URL = 'https://xzmetro.github.io/maven/org/simplecity/simple_city';
 
 async function fetchText(url) {
     const response = await fetch(url);
