@@ -30,7 +30,6 @@ const indexI18n = {
             "Parking Barrier (Left / Middle / Right / Bracket)",
             "Road Signs",
             "Construction Barriers",
-            "Trackside Balise"
         ],
         reqTitle: "Requirements",
         reqDep: "Dependency",
@@ -81,7 +80,6 @@ const indexI18n = {
             "停车挡杆（左 / 中 / 右 / 支架）",
             "道路标志",
             "施工围挡",
-            "轨旁应答器（测试项）"
         ],
         reqTitle: "运行要求",
         reqDep: "依赖项",
@@ -160,6 +158,7 @@ function setIndexLang(lang) {
     // Footer
     document.getElementById('footer-authors').textContent = data.footerAuthors;
     document.getElementById('footer-soon').textContent = data.footerSoon;
+    document.getElementById('license-file').textContent = data.footerSoon;
 
     // 语言切换链接
     const langSwitch = document.getElementById('lang-switch');

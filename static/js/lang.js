@@ -1,8 +1,8 @@
 const i18n = {
     en: {
-        title: "Xiaozhong's Metro - Home",
-        dlTitle: "Xiaozhong's Metro - Download",
-        siteName: "Xiaozhong's Metro",
+        title: "Simple City - Home",
+        dlTitle: "Simple City - Download",
+        siteName: "Simple City",
         navHome: "Home",
         navDownload: "Download",
         navIssues: "Issues",
@@ -14,9 +14,9 @@ const i18n = {
         downloadBtn: "Download",
     },
     zh: {
-        title: "小钟的Metro - 主页",
-        dlTitle: "小钟的Metro - 下载",
-        siteName: "小钟的Metro",
+        title: "简单城建 - 主页",
+        dlTitle: "简单城建 - 下载",
+        siteName: "简单城建",
         navHome: "主页",
         navDownload: "下载",
         navIssues: "报告",
