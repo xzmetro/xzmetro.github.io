@@ -35,9 +35,10 @@ async function fetchHashes(version) {
     return hashes;
 }
 
-function formatDate(dateStr, lang) {
-    if (!dateStr) return lang === 'zh' ? '未知' : 'Unknown';
+function formatDate(dateStr) {
+    if (!dateStr) return t('unknown');
     const date = new Date(dateStr);
+    const lang = getLang();
     return date.toLocaleString(lang === 'zh' ? 'zh-CN' : 'en-US', {
         year: 'numeric', month: '2-digit', day: '2-digit',
         hour: '2-digit', minute: '2-digit', second: '2-digit'
@@ -60,8 +61,16 @@ async function fetchVersions() {
     try {
         const text = await fetchText(`${MAVEN_BASE_URL}/maven-metadata.xml`);
         const xml = new DOMParser().parseFromString(text, 'application/xml');
-        return Array.from(xml.querySelectorAll('versioning versions version'))
-            .map(v => v.textContent).reverse();
+
+        const versioning = xml.getElementsByTagName('versioning')[0];
+        if (!versioning) return [];
+
+        const versionsNode = versioning.getElementsByTagName('versions')[0];
+        if (!versionsNode) return [];
+
+        return Array.from(versionsNode.getElementsByTagName('version'))
+            .map(v => v.textContent)
+            .reverse();
     } catch (error) {
         console.error('Error:', error);
         return [];
@@ -75,7 +84,7 @@ async function fetchFileInfo(version) {
         const [head, hashes] = await Promise.all([fetchHead(jarUrl), fetchHashes(version)]);
         return { version, filename, url: jarUrl, size: formatBytes(head.size), lastModified: head.lastModified, hashes };
     } catch {
-        return { version, filename, url: jarUrl, size: 'Unknown', lastModified: null, hashes: {} };
+        return { version, filename, url: jarUrl, size: t('unknown'), lastModified: null, hashes: {} };
     }
 }
 
@@ -86,7 +95,7 @@ async function populateVersions() {
 
     if (versions.length === 0) {
         const option = document.createElement('option');
-        option.textContent = 'Failed to load';
+        option.textContent = t('versionLoadFailed');
         option.value = '';
         select.appendChild(option);
         return;
@@ -108,15 +117,14 @@ async function populateVersions() {
 async function updateDownloadInfo(version) {
     if (!version) return;
     const info = await fetchFileInfo(version);
-    const lang = getLang();
 
     const labels = {
-        file: lang === 'zh' ? '文件' : 'File',
-        size: lang === 'zh' ? '大小' : 'Size',
-        updated: lang === 'zh' ? '更新时间' : 'Updated',
-        hash: lang === 'zh' ? '校验值' : 'Checksums',
-        copy: lang === 'zh' ? '复制' : 'Copy',
-        copied: lang === 'zh' ? '已复制' : 'Copied'
+        file: t('file'),
+        size: t('size'),
+        updated: t('updated'),
+        hash: t('hash'),
+        copy: t('copy'),
+        copied: t('copied')
     };
 
     let hashesHtml = '';
@@ -148,7 +156,7 @@ async function updateDownloadInfo(version) {
             </div>
             <div class="info-row">
                 <span class="info-label">${labels.updated}</span>
-                <span class="info-value">${formatDate(info.lastModified, lang)}</span>
+                <span class="info-value">${formatDate(info.lastModified)}</span>
             </div>
             ${hashesHtml ? `
                 <div class="hashes-section">
@@ -163,7 +171,8 @@ async function updateDownloadInfo(version) {
     const downloadBtn = document.getElementById('download-btn');
     downloadBtn.href = info.url;
     downloadBtn.style.display = 'inline-block';
-    document.getElementById('download-btn-text').textContent = lang === 'zh' ? '下载' : 'Download';
+    const btnText = document.getElementById('download-btn-text');
+    if (btnText) btnText.textContent = t('downloadBtn');
 }
 
 async function copyHash(type) {
@@ -172,10 +181,10 @@ async function copyHash(type) {
     try {
         await navigator.clipboard.writeText(element.textContent);
         const btn = element.nextElementSibling;
-        btn.textContent = btn.dataset.copied;
+        btn.textContent = t('copied');
         btn.classList.add('copied');
         setTimeout(() => {
-            btn.textContent = btn.dataset.copy;
+            btn.textContent = btn.dataset.copy || t('copy');
             btn.classList.remove('copied');
         }, 1500);
     } catch (err) {
@@ -183,13 +192,16 @@ async function copyHash(type) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    populateVersions();
-    document.getElementById('version-select').addEventListener('change', async (e) => {
-        const version = e.target.value;
-        await updateDownloadInfo(version);
-        const params = new URLSearchParams(window.location.search);
-        params.set('ver', version);
-        window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
-    });
-});
+async function initMaven() {
+    await populateVersions();
+    const select = document.getElementById('version-select');
+    if (select) {
+        select.addEventListener('change', async (e) => {
+            const version = e.target.value;
+            await updateDownloadInfo(version);
+            const params = new URLSearchParams(window.location.search);
+            params.set('ver', version);
+            window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+        });
+    }
+}

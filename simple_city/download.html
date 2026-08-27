@@ -41,8 +41,25 @@
         </a>
     </div>
 </main>
-
+<script src="../static/js/util.js"></script>
 <script src="../static/js/lang.js"></script>
-<script src="../static/js/download.js"></script>
-</body>
-</html>
+<script src="../static/js/maven.js"></script>
+<script>
+    const downloadMap = {
+        'page-title': 'dlTitle',
+        'site-name': 'siteName',
+        'nav-home': 'navHome',
+        'nav-download': 'navDownload',
+        'nav-issues': 'navIssues',
+        'nav-wiki': 'navWiki',
+        'download-title': 'downloadTitle',
+        'version-label': 'versionLabel',
+        'version-loading': 'versionLoading',
+        'version-info': 'versionInfo',
+        'download-btn-text': 'downloadBtn',
+    };
+    document.addEventListener('DOMContentLoaded', async () => {
+        initI18n(downloadMap);
+        await initMaven();
+    });
+</script>

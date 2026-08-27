@@ -1,112 +1,138 @@
-const i18n = {
+register({
     en: {
-        title: "Simple City - Home",
-        dlTitle: "Simple City - Download",
         siteName: "Simple City",
         navHome: "Home",
         navDownload: "Download",
         navIssues: "Issues",
+        navWiki: "Wiki",
         langSwitch: "简体中文",
+
+        title: "Simple City - Home",
+        heroTitle: "Simple City",
+        heroSubtitle: "A Minecraft Subway Facility Expansion Mod",
+        heroDesc: 'A very ordinary and simple subway facility expansion mod. It is recommended to add the <a href="https://modrinth.com/mod/minecraft-transit-railway">Minecraft Transit Railway</a> mod for better utilization.',
+        heroDownload: "Download",
+        featuresTitle: "Features",
+        blocksTitle: "Building Blocks",
+        blocksList: [
+            "<strong>All color wool blocks</strong> (Slabs, Stairs, Vertical Slabs)",
+            "<strong>All color concrete blocks</strong> (Slabs, Stairs, Vertical Slabs)",
+            "<em>Ported from Minecraft 26.3</em>"
+        ],
+        metroTitle: "Metro Facilities",
+        metroList: [
+            "Station Signs (Low / High)",
+            "Fire Extinguisher & Cabinet",
+            "APG Railing (Platform Screen Doors)",
+            "Train Departure Bell",
+            "Wuzhou Metro Logo",
+            "Tactile Paving"
+        ],
+        roadTitle: "Road Facilities",
+        roadList: [
+            "Parking Barrier (Left / Middle / Right / Bracket)",
+            "Road Signs",
+            "Construction Barriers",
+        ],
+        reqTitle: "Requirements",
+        reqDep: "Dependency",
+        reqVer: "Version",
+        installTitle: "Installation",
+        installStep1: 'Install <a href="https://fabricmc.net/use/">Fabric Loader</a>',
+        installStep2: "Place the mod .jar file into your mods/ folder",
+        installStep3: '(Optional) Install <a href="https://modrinth.com/mod/minecraft-transit-railway">MTR Mod</a> for a better experience',
+        licenseTitle: "License",
+        licenseDesc: "This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.",
+        licenseMaynot: "<strong>You may NOT:</strong>",
+        licenseList: [
+            "Use this mod for commercial purposes",
+            "Modify or distribute modified versions",
+            "Redistribute this mod without permission"
+        ],
+        footerAuthors: "Authors:",
+        footerSoon: "This mod is under active development. More features coming soon!",
+
+        dlTitle: "Simple City - Download",
         downloadTitle: "Download Mod",
         versionLabel: "Version: ",
         versionLoading: "Loading...",
         versionInfo: "Select a version to download",
         downloadBtn: "Download",
+        file: "File",
+        size: "Size",
+        updated: "Updated",
+        hash: "Checksums",
+        copy: "Copy",
+        copied: "Copied",
+        unknown: "Unknown",
+        versionLoadFailed: "Failed to load",
     },
     zh: {
-        title: "简单城建 - 主页",
-        dlTitle: "简单城建 - 下载",
         siteName: "简单城建",
         navHome: "主页",
         navDownload: "下载",
         navIssues: "报告",
+        navWiki: "Wiki",
         langSwitch: "English",
+
+        title: "简单城建 - 主页",
+        heroTitle: "简单城建",
+        heroSubtitle: "Minecraft 地铁设施扩展模组",
+        heroDesc: '一个普通普通简单简单的地铁设施扩展模组。建议配合 <a href="https://modrinth.com/mod/minecraft-transit-railway">Minecraft Transit Railway</a> 模组使用以获得更好的体验。',
+        heroDownload: "下载",
+        featuresTitle: "功能特性",
+        blocksTitle: "建筑方块",
+        blocksList: [
+            "<strong>全色羊毛方块</strong>（台阶、楼梯、竖半砖）",
+            "<strong>全色混凝土方块</strong>（台阶、楼梯、竖半砖）",
+            "<em>移植Minecraft 26.3 </em>"
+        ],
+        metroTitle: "地铁设施",
+        metroList: [
+            "车站标识（低 / 高）",
+            "灭火器及灭火器箱",
+            "低站台屏蔽门栏杆",
+            "列车发车铃",
+            "梧州地铁标志",
+            "盲道砖"
+        ],
+        roadTitle: "道路设施",
+        roadList: [
+            "停车挡杆（左 / 中 / 右 / 支架）",
+            "道路标志",
+            "施工围挡",
+        ],
+        reqTitle: "运行要求",
+        reqDep: "依赖项",
+        reqVer: "版本",
+        installTitle: "安装方法",
+        installStep1: '安装 <a href="https://fabricmc.net/use/">Fabric Loader</a>',
+        installStep2: "将模组 .jar 文件放入 mods/ 文件夹",
+        installStep3: '（可选）安装 <a href="https://modrinth.com/mod/minecraft-transit-railway">MTR 模组</a>以获得更好体验',
+        licenseTitle: "许可协议",
+        licenseDesc: "本项目采用知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议。",
+        licenseMaynot: "<strong>您不得：</strong>",
+        licenseList: [
+            "将此模组用于商业目的",
+            "修改或分发修改后的版本",
+            "未经许可重新分发此模组"
+        ],
+        footerAuthors: "作者：",
+        footerSoon: "本模组正在积极开发中，更多功能即将推出！",
+
+        dlTitle: "简单城建 - 下载",
         downloadTitle: "下载模组",
         versionLabel: "版本：",
         versionLoading: "加载中...",
         versionInfo: "选择版本下载",
         downloadBtn: "下载",
+        file: "文件",
+        size: "大小",
+        updated: "更新时间",
+        hash: "校验值",
+        copy: "复制",
+        copied: "已复制",
+        unknown: "未知",
+        versionLoadFailed: "加载失败",
     }
-};
-
-function setLang(lang) {
-    const data = i18n[lang] || i18n.en;
-
-    const pageTitle = document.getElementById('page-title');
-    if (pageTitle) pageTitle.textContent = data.title;
-
-    const dlPageTitle = document.getElementById('dl-page-title');
-    if (dlPageTitle) dlPageTitle.textContent = data.dlTitle;
-
-    const siteName = document.getElementById('site-name');
-    if (siteName) siteName.textContent = data.siteName;
-
-    const navHome = document.getElementById('nav-home');
-    if (navHome) navHome.textContent = data.navHome;
-
-    const navDownload = document.getElementById('nav-download');
-    if (navDownload) navDownload.textContent = data.navDownload;
-
-    const navIssues = document.getElementById('nav-issues');
-    if (navIssues) navIssues.textContent = data.navIssues;
-
-    const navWiki = document.getElementById('nav-wiki');
-    if (navWiki) navWiki.textContent = data.navWiki;
-
-    const langSwitch = document.getElementById('lang-switch');
-    if (langSwitch) {
-        langSwitch.textContent = data.langSwitch;
-        const params = new URLSearchParams(window.location.search);
-        params.set('lang', lang === 'zh' ? 'en' : 'zh');
-        langSwitch.href = `?${params.toString()}`;
-    }
-
-    const downloadTitle = document.getElementById('download-title');
-    if (downloadTitle) downloadTitle.textContent = data.downloadTitle;
-
-    const versionLabel = document.getElementById('version-label');
-    if (versionLabel) versionLabel.textContent = data.versionLabel;
-
-    const versionLoading = document.getElementById('version-loading');
-    if (versionLoading) versionLoading.textContent = data.versionLoading;
-
-    const versionInfo = document.getElementById('version-info');
-    if (versionInfo && !versionInfo.dataset.updated) {
-        versionInfo.textContent = data.versionInfo;
-    }
-
-    const downloadBtn = document.getElementById('download-btn');
-    if (downloadBtn) downloadBtn.textContent = data.downloadBtn;
-
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-}
-
-function getLang() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('lang') || 'en';
-}
-
-// 保留语言参数到所有内部链接
-function preserveLang() {
-    const lang = getLang();
-    if (!lang || lang === 'en') return;
-
-    document.querySelectorAll('a[href]').forEach(link => {
-        const href = link.getAttribute('href');
-        if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('javascript')) {
-            return;
-        }
-        if (link.id === 'lang-switch') return;
-
-        const url = new URL(href, window.location.href);
-        url.searchParams.set('lang', lang);
-        link.href = url.toString();
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    preserveLang();
 });
-
-setLang(getLang());
-// preserveLang();

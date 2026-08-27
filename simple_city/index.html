@@ -118,17 +118,52 @@
                 <li>Modify or distribute modified versions</li>
                 <li>Redistribute this mod without permission</li>
             </ul>
-            <p id="license-file">See the <a href="LICENSE.txt">LICENSE</a> file for details.</p>
+            <p>See the <a href="LICENSE.txt">LICENSE</a> file for details.</p>
         </div>
     </section>
 </main>
 
 <footer>
-    <p><strong id="footer-authors">Authors:</strong> Xiaozhong's Metro Organization All People</p>
+    <p><strong id="footer-authors">Authors:</strong> Xiaozhong's Metro Organization</p>
     <p class="coming-soon" id="footer-soon">This mod is under active development. More features coming soon!</p>
 </footer>
 
+<script src="../static/js/util.js"></script>
 <script src="../static/js/lang.js"></script>
-<script src="../static/js/index-lang.js"></script>
+<script>
+    const indexMap = {
+        'page-title': 'title',
+        'site-name': 'siteName',
+        'nav-home': 'navHome',
+        'nav-download': 'navDownload',
+        'nav-issues': 'navIssues',
+        'nav-wiki': 'navWiki',
+        'hero-title': 'heroTitle',
+        'hero-subtitle': 'heroSubtitle',
+        'hero-desc': { key: 'heroDesc', mode: 'html' },
+        'hero-download': 'heroDownload',
+        'features-title': 'featuresTitle',
+        'blocks-title': 'blocksTitle',
+        'blocks-list': { key: 'blocksList', mode: 'list' },
+        'metro-title': 'metroTitle',
+        'metro-list': { key: 'metroList', mode: 'list' },
+        'road-title': 'roadTitle',
+        'road-list': { key: 'roadList', mode: 'list' },
+        'req-title': 'reqTitle',
+        'req-dep': 'reqDep',
+        'req-ver': 'reqVer',
+        'install-title': 'installTitle',
+        'install-step1': { key: 'installStep1', mode: 'html' },
+        'install-step2': 'installStep2',
+        'install-step3': { key: 'installStep3', mode: 'html' },
+        'license-title': 'licenseTitle',
+        'license-desc': 'licenseDesc',
+        'license-maynot': { key: 'licenseMaynot', mode: 'html' },
+        'license-list': { key: 'licenseList', mode: 'list' },
+        'footer-authors': 'footerAuthors',
+        'footer-soon': 'footerSoon',
+    };
+    document.addEventListener('DOMContentLoaded', () => initI18n(indexMap));
+</script>
 </body>
 </html>
