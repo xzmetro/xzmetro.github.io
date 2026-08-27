@@ -1,11 +1,11 @@
 const indexI18n = {
     en: {
-        title: "Xiaozhong's Metro",
-        siteName: "Xiaozhong's Metro",
+        title: "Simple City",
+        siteName: "Simple City",
         navHome: "Home",
         navDownload: "Download",
         langSwitch: "简体中文",
-        heroTitle: "Xiaozhong's Metro",
+        heroTitle: "Simple City",
         heroSubtitle: "A Minecraft Subway Facility Expansion Mod",
         heroDesc: "A very ordinary and simple subway facility expansion mod. It is recommended to add the Minecraft Transit Railway mod for better utilization.",
         heroDownload: "Download",
@@ -50,8 +50,8 @@ const indexI18n = {
         footerSoon: "This mod is under active development. More features coming soon!"
     },
     zh: {
-        title: "小钟的Metro",
-        siteName: "小钟的Metro",
+        title: "简单城建",
+        siteName: "简单城建",
         navHome: "主页",
         navDownload: "下载",
         langSwitch: "English",
