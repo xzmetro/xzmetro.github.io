@@ -1,0 +1,103 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.simplecity",
+    "module": "simple_city",
+    "version": "1.0.0_snapshot_3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "simple_city-1.0.0_snapshot_3.jar",
+          "url": "simple_city-1.0.0_snapshot_3.jar",
+          "size": 554564,
+          "sha512": "140abcf02dd924976a8788f2c94e29560fbc15b16955a3a8e2c3ea1a57469fdc5bba163d483b3f844be6ee18ae732e5aad9989fce8edf2677d702fbd0524176a",
+          "sha256": "eebe47851e57bc1b460a15c20f1a39ec355d2dde10e86737d1908ad8c77f6efb",
+          "sha1": "50a996e11749ac55461919c2277b6551ccea89e6",
+          "md5": "7f0e4d5359a6f0393c1d5d04f794cf18"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "net.fabricmc",
+          "module": "fabric-loader",
+          "version": {
+            "requires": "0.19.3"
+          }
+        },
+        {
+          "group": "net.fabricmc.fabric-api",
+          "module": "fabric-api",
+          "version": {
+            "requires": "0.92.11+1.20.1"
+          }
+        },
+        {
+          "group": "maven.modrinth",
+          "module": "mOgUt4GM",
+          "version": {
+            "requires": "lEkperf6"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "simple_city-1.0.0_snapshot_3.jar",
+          "url": "simple_city-1.0.0_snapshot_3.jar",
+          "size": 554564,
+          "sha512": "140abcf02dd924976a8788f2c94e29560fbc15b16955a3a8e2c3ea1a57469fdc5bba163d483b3f844be6ee18ae732e5aad9989fce8edf2677d702fbd0524176a",
+          "sha256": "eebe47851e57bc1b460a15c20f1a39ec355d2dde10e86737d1908ad8c77f6efb",
+          "sha1": "50a996e11749ac55461919c2277b6551ccea89e6",
+          "md5": "7f0e4d5359a6f0393c1d5d04f794cf18"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "simple_city-1.0.0_snapshot_3-sources.jar",
+          "url": "simple_city-1.0.0_snapshot_3-sources.jar",
+          "size": 506245,
+          "sha512": "14cd0b593a87cd6d24b23ae6e73d7a74954e7d11d07645c9085c837bd75675c6b557d66626d63b0d372a6df37f73d723115e31ccb73986969d27c83adc55ddaa",
+          "sha256": "50fd544290449bf2c532645b2fa2d675ab252c26589dba6dde494036c7252da0",
+          "sha1": "de7372330427bc0d91bf31572709543502fa83b3",
+          "md5": "6c6da4080caac351d7ec478ce2a11660"
+        }
+      ]
+    }
+  ]
+}
