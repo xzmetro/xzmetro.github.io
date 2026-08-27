@@ -69,7 +69,7 @@ async function fetchVersions() {
 }
 
 async function fetchFileInfo(version) {
-    const filename = `xzmetro-mod-${version}.jar`;
+    const filename = `simple_city-${version}.jar`;
     const jarUrl = `${MAVEN_BASE_URL}/${version}/${filename}`;
     try {
         const [head, hashes] = await Promise.all([fetchHead(jarUrl), fetchHashes(version)]);
