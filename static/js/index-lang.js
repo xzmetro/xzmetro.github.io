@@ -55,7 +55,7 @@ const indexI18n = {
         navHome: "主页",
         navDownload: "下载",
         langSwitch: "English",
-        heroTitle: "小钟的Metro",
+        heroTitle: "简单城建",
         heroSubtitle: "Minecraft 地铁设施扩展模组",
         heroDesc: "一个普通普通简单简单的地铁设施扩展模组。建议配合 Minecraft Transit Railway 模组使用以获得更好的体验。",
         heroDownload: "下载",
