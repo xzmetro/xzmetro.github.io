@@ -9,7 +9,6 @@ register({
 
         title: "Simple City - Home",
         heroTitle: "Simple City",
-        heroSubtitle: "A Minecraft Subway Facility Expansion Mod",
         heroDesc: 'A very ordinary and simple subway facility expansion mod. It is recommended to add the <a href="https://modrinth.com/mod/minecraft-transit-railway">Minecraft Transit Railway</a> mod for better utilization.',
         heroDownload: "Download",
         featuresTitle: "Features",
@@ -93,7 +92,7 @@ register({
             "灭火器及灭火器箱",
             "低站台屏蔽门栏杆",
             "列车发车铃",
-            "梧州地铁标志",
+            "梧州地铁logo",
             "盲道砖"
         ],
         roadTitle: "道路设施",

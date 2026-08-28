@@ -22,28 +22,35 @@
         <a href="?lang=zh" id="lang-switch">简体中文</a>
     </nav>
 </header>
-
-<main>
-    <div class="hero">
-        <h1 id="hero-title">Simple City</h1>
-        <p class="subtitle" id="hero-subtitle">A Minecraft Subway Facility Expansion Mod</p>
-        <div class="badges">
-            <a href="https://modrinth.com/mod/simple_city/">
-                <img src="https://img.shields.io/badge/Modrinth-1.20.1-00AF5C?logo=modrinth" alt="Modrinth">
-            </a>
-            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
-                <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey" alt="License">
-            </a>
-        </div>
-        <p class="hero-desc" id="hero-desc">
-            A very ordinary and simple subway facility expansion mod. It is recommended to add the
-            <a href="https://modrinth.com/mod/minecraft-transit-railway">Minecraft Transit Railway</a>
-            mod for better utilization.
-        </p>
-        <div class="download-section">
-            <a href="download.html" class="download-btn-large" id="hero-download">Download</a>
+<div class="hero-banner">
+    <img src="../static/images/a93a7b4bec931b9c4dd271718397ce04.jpg" alt="Simple City Banner">
+</div>
+<div class="hero-card-wrap">
+    <div class="hero-card">
+        <img src="../static/images/favicon.png" alt="Logo" class="hero-card-logo">
+        <div class="hero-card-body">
+            <h1 id="hero-title">Simple City</h1>
+            <div class="badges">
+                <a href="https://modrinth.com/mod/simple_city/">
+                    <img src="https://img.shields.io/badge/Modrinth-1.20.1-00AF5C?logo=modrinth" alt="Modrinth">
+                </a>
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                    <img src="https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey" alt="License">
+                </a>
+            </div>
+            <p class="hero-desc" id="hero-desc">
+                A very ordinary and simple subway facility expansion mod. It is recommended to add the
+                <a href="https://modrinth.com/mod/minecraft-transit-railway">Minecraft Transit Railway</a>
+                mod for better utilization.
+            </p>
+            <div class="download-section">
+                <a href="download.html" class="download-btn-large" id="hero-download">Download</a>
+            </div>
         </div>
     </div>
+</div>
+<main>
+
 
     <section id="features">
         <h2 id="features-title">Features</h2>
@@ -128,6 +135,12 @@
     <p class="coming-soon" id="footer-soon">This mod is under active development. More features coming soon!</p>
 </footer>
 
+<div id="scroll-down" class="scroll-down" title="Scroll down">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+    </svg>
+</div>
+
 <script src="../static/js/util.js"></script>
 <script src="../static/js/lang.js"></script>
 <script>
@@ -139,7 +152,6 @@
         'nav-issues': 'navIssues',
         'nav-wiki': 'navWiki',
         'hero-title': 'heroTitle',
-        'hero-subtitle': 'heroSubtitle',
         'hero-desc': { key: 'heroDesc', mode: 'html' },
         'hero-download': 'heroDownload',
         'features-title': 'featuresTitle',
@@ -164,6 +176,26 @@
         'footer-soon': 'footerSoon',
     };
     document.addEventListener('DOMContentLoaded', () => initI18n(indexMap));
+
+    (function() {
+        const btn = document.getElementById('scroll-down');
+        if (!btn) return;
+
+        function check() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const clientHeight = window.innerHeight;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const isBottom = scrollTop + clientHeight >= scrollHeight - 100;
+            btn.classList.toggle('visible', !isBottom);
+        }
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', check, { passive: true });
+        check();
+    })();
 </script>
 </body>
 </html>
