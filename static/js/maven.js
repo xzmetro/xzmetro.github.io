@@ -15,7 +15,7 @@ async function fetchHead(url) {
 }
 
 async function fetchHashes(version) {
-    const baseUrl = `${MAVEN_BASE_URL}/${version}/simple_city-${version}.jar`;
+    const baseUrl = `${MAVEN_BASE_URL}/${version}/simple_city_${version}.jar`;
     const hashes = {};
     const hashTypes = [
         { ext: 'md5', name: 'MD5' },
@@ -78,7 +78,7 @@ async function fetchVersions() {
 }
 
 async function fetchFileInfo(version) {
-    const filename = `simple_city-${version}.jar`;
+    const filename = `simple_city_${version}.jar`;
     const jarUrl = `${MAVEN_BASE_URL}/${version}/${filename}`;
     try {
         const [head, hashes] = await Promise.all([fetchHead(jarUrl), fetchHashes(version)]);
